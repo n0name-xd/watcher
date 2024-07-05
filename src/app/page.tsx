@@ -46,8 +46,7 @@ export default function Home() {
       <DVRPlayer
         options={{
           name: "1-70655ba8a1",
-          streamer_http:
-            "rtsp://admin:Lqrs!18d777@192.168.10.101/ISAPI/Streaming/Channels/101",
+          streamer_http: "",
           token: "", // Auth token
           dvr: true,
         }}
