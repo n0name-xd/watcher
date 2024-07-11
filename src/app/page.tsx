@@ -1,56 +1,30 @@
 "use client";
+import dynamic from "next/dynamic";
+import { useEffect, useState } from "react";
 
-import DvrPlayer from "@flussonic/flussonic-dvr-player";
-import { useEffect, useRef } from "react";
-
-interface IFlussonicOptions {
-  readonly options: {
-    name: string;
-    streamer_http: string;
-    query?: string;
-    token?: string;
-    dvr?: boolean;
-    tokenName?: string;
-  };
-}
-
-const DVRPlayer = ({ options }: IFlussonicOptions) => {
-  const player = useRef(null);
-
-  useEffect(() => {
-    const DVR = DvrPlayer.load(options, player.current);
-
-    return function cleanup() {
-      const { DvrInstance } = DVR;
-      if (DvrInstance) {
-        const instance = DvrInstance();
-        if (instance) {
-          instance.props.close();
-        }
-      }
-    };
-  }, [options]);
-
-  return (
-    <div
-      id="dvr-player"
-      ref={player}
-      style={{ width: "300px", height: "300px" }}
-    />
-  );
-};
+const DVRPlayer = dynamic(() => import("./player"), {
+  loading: () => <p>Player loading...</p>,
+});
 
 export default function Home() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   return (
     <div>
-      <DVRPlayer
-        options={{
-          name: "1-70655ba8a1",
-          streamer_http: "",
-          token: "", // Auth token
-          dvr: true,
-        }}
-      />
+      {isClient ? (
+        <DVRPlayer
+          options={{
+            name: "traffic-dc48a34d04",
+            streamer_http: "https://eu-001.vscdn.io",
+            token: "3.BUp2IVgpAAAAAAAAAAUABhzKgsafiwVgxka6257M0ku2Hpnai4sxgSwD", // Auth token
+            dvr: true,
+          }}
+        />
+      ) : null}
     </div>
   );
 }
