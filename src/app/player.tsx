@@ -12,6 +12,7 @@ interface IFlussonicOptions {
     token?: string;
     dvr?: boolean;
     tokenName?: string;
+    zoom?: any;
   };
 }
 
