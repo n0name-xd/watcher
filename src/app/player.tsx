@@ -37,7 +37,7 @@ const DVRPlayer = ({ options }: IFlussonicOptions) => {
     <div
       id="dvr-player"
       ref={playerWrapper}
-      style={{ width: "100%", height: "800px" }}
+      style={{ width: "80%", height: "80%" }}
     />
   );
 };
