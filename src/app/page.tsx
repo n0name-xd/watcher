@@ -1,13 +1,15 @@
 "use client";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
+import DVRPlayer from "./player";
 
-const DVRPlayer = dynamic(() => import("./player"), {
-  loading: () => <p>Player loading...</p>,
-});
+// const DVRPlayer = dynamic(() => import("./player"), {
+//   loading: () => <p>Player loading...</p>,
+// });
 
 export default function Home() {
   const [isClient, setIsClient] = useState(false);
+  const [showCamera, setShowCamera] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
@@ -25,7 +27,8 @@ export default function Home() {
 
   return (
     <>
-      {isClient ? (
+      <button onClick={() => setShowCamera(!showCamera)}>show camera</button>
+      {isClient && showCamera ? (
         <DVRPlayer
           options={
             {
@@ -36,6 +39,8 @@ export default function Home() {
               streamer_http: "https://streamer2.mayak-system.ru",
               token:
                 "3.1el4o4PtAAAAAAAAAE0ABicstkkgkV9ZqPf69bFKkVF1jRv2Msgk_z1x",
+              query:
+                "token=3.1el4o4PtAAAAAAAAAE0ABicstkkgkV9ZqPf69bFKkVF1jRv2Msgk_z1x",
             } as any
           }
         />
