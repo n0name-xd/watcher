@@ -12,7 +12,7 @@ interface IFlussonicOptions {
     token?: string;
     dvr?: boolean;
     tokenName?: string;
-    zoom?: any;
+    zoom?: number;
   };
 }
 
@@ -22,6 +22,7 @@ const DVRPlayer = ({ options }: IFlussonicOptions) => {
   useEffect(() => {
     const DVR = DvrPlayer.load(options, playerWrapper.current);
     console.log("initial player");
+
     return function cleanup() {
       const { DvrInstance } = DVR;
       if (DvrInstance) {

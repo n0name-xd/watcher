@@ -1,6 +1,6 @@
 "use client";
 import dynamic from "next/dynamic";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import DVRPlayer from "./player";
 
 // const DVRPlayer = dynamic(() => import("./player"), {
@@ -8,27 +8,12 @@ import DVRPlayer from "./player";
 // });
 
 export default function Home() {
-  const [isClient, setIsClient] = useState(false);
   const [showCamera, setShowCamera] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  //origin
-  // const name = "traffic-dc48a34d04";
-  // const streamer_http = "https://eu-001.vscdn.io";
-  // const token = "3.BUp2IVgpAAAAAAAAAAUABhzKgsafiwVgxka6257M0ku2Hpnai4sxgSwD";
-
-  //watcher
-  // const name = "kamera.72.1.10-05ace3930b";
-  // const streamer_http = "https://watcher.mayak-system.ru";
-  // const token = "3.6x2QOGKCAAAAAAAAAAEABhz3xUoV9WY_EuZVZm136gTWmsW7SBL4muAO";
 
   return (
     <>
       <button onClick={() => setShowCamera(!showCamera)}>show camera</button>
-      {isClient && showCamera ? (
+      {showCamera ? (
         <DVRPlayer
           options={
             {
