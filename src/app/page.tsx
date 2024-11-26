@@ -20,12 +20,12 @@ export default function Home() {
               dvr: false,
               proto: "hls",
               locale: "ru",
-              name: "23.42-6048f98a54",
+              name: "16.51-0f482a22c1",
               streamer_http: "https://streamer2.mayak-system.ru",
               token:
-                "3.1el4o4PtAAAAAAAAAE0ABicstkkgkV9ZqPf69bFKkVF1jRv2Msgk_z1x",
+                "3.lC7idggIAAAAAAAAAE0ABifSP-Jfvf0xeV46_ammdXyzgcb0LqrenvgQ",
               query:
-                "token=3.1el4o4PtAAAAAAAAAE0ABicstkkgkV9ZqPf69bFKkVF1jRv2Msgk_z1x",
+                "token=3.lC7idggIAAAAAAAAAE0ABifSP-Jfvf0xeV46_ammdXyzgcb0LqrenvgQ",
             } as any
           }
         />

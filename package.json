@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@flussonic/flussonic-dvr-player": "24.7.4-93-g513207b",
+    "@flussonic/flussonic-dvr-player": "24.7.4-105-gd5acdc9",
     "next": "14.2.4",
     "react": "^18",
     "react-dom": "^18"
