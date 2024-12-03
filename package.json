@@ -12,7 +12,7 @@
     "@emotion/cache": "^11.13.5",
     "@emotion/react": "^11.13.5",
     "@emotion/styled": "^11.13.5",
-    "@flussonic/flussonic-dvr-player": "24.7.4-105-gd5acdc9",
+    "@flussonic/flussonic-dvr-player": "24.12.1-7-g5e81bf9",
     "@mui/material": "^6.1.9",
     "@mui/material-nextjs": "^6.1.9",
     "next": "14.2.4",
