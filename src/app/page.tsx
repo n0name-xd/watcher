@@ -1,41 +1,21 @@
 "use client";
 import dynamic from "next/dynamic";
-import { useEffect, useState } from "react";
+import {ButtonWithModal} from "@/app/ButtonWithModal";
 
-const DVRPlayer = dynamic(() => import("./player"), {
-  loading: () => <p>Player loading...</p>,
-});
+// const DVRPlayer = dynamic(() => import("./player"), {
+//   loading: () => <p>Player loading...</p>,
+// });
 
 export default function Home() {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  //origin
-  const name = "traffic-dc48a34d04";
-  const streamer_http = "https://eu-001.vscdn.io";
-  const token = "3.BUp2IVgpAAAAAAAAAAUABhzKgsafiwVgxka6257M0ku2Hpnai4sxgSwD";
-
-  //watcher
-  // const name = "kamera.72.1.10-05ace3930b";
-  // const streamer_http = "https://watcher.mayak-system.ru";
-  // const token = "3.6x2QOGKCAAAAAAAAAAEABhz3xUoV9WY_EuZVZm136gTWmsW7SBL4muAO";
-
   return (
-    <div>
-      {isClient ? (
-        <DVRPlayer
-          options={{
-            zoom: 600,
-            name,
-            streamer_http,
-            token,
-            dvr: true,
-          }}
-        />
-      ) : null}
-    </div>
+    <>
+      {[
+        { name: 'nomera-f8c02deb4d', token: '3.P6tCUuAIAAAAAAAAAAEABifigs-KODgrpu9qp3k-k1yWQq19ldElxQEb' },
+        { name: 'ofis.ias-eb236c19a2', token: '3.bZjltMtNAAAAAAAAAAEABifhNlf2aroBzzRQ6V7ea6Cy8fmmxZ7QIKlc' },
+        { name: 'cod.skynet-91ec9cf86a', token: '3.bZjltMtNAAAAAAAAAAEABifhNlf2ahcdScEiNobl2E5V-MfYIbXZF1kz'}
+      ].map((item, index) => (
+        <ButtonWithModal name={item.name} key={item.name} token={item.token} index={index} />
+      ))}
+    </>
   );
 }
