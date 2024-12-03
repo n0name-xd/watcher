@@ -1,18 +1,37 @@
 "use client";
-import dynamic from "next/dynamic";
-import { useState } from "react";
-import DVRPlayer from "./player";
 
-// const DVRPlayer = dynamic(() => import("./player"), {
-//   loading: () => <p>Player loading...</p>,
-// });
+import dynamic from "next/dynamic";
+import Link from "next/link";
+import { useState } from "react";
+
+const DVRPlayer = dynamic(() => import("./player"), {
+  loading: () => <p>Player loading...</p>,
+});
 
 export default function Home() {
   const [showCamera, setShowCamera] = useState(false);
 
   return (
     <>
-      <button onClick={() => setShowCamera(!showCamera)}>show camera</button>
+      <div className="flex gap-10">
+        <div>
+          <button onClick={() => setShowCamera(!showCamera)}>
+            show camera
+          </button>
+        </div>
+
+        <div>
+          <Link
+            className="text-base"
+            href={
+              "http://localhost:3000/embed/ag-10980401?dvr=false&token=3.7WapYrheAAAAAAAAAAEABiheTeW0nrMxE1ev2oH55q1DTqrmeJfy97oW"
+            }
+          >
+            embed page
+          </Link>
+        </div>
+      </div>
+
       {showCamera ? (
         <DVRPlayer
           options={

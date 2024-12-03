@@ -10,10 +10,14 @@ interface IFlussonicOptions {
     streamer_http: string;
     query?: string;
     token?: string;
-    dvr?: boolean;
+    dvr?: string;
     tokenName?: string;
     zoom?: number;
+    locale?: string;
+    muted?: string;
+    proto?: string;
   };
+  styles?: React.CSSProperties;
 }
 
 const DVRPlayer = ({ options }: IFlussonicOptions) => {
@@ -21,14 +25,12 @@ const DVRPlayer = ({ options }: IFlussonicOptions) => {
 
   useEffect(() => {
     const DVR = DvrPlayer.load(options, playerWrapper.current);
-    console.log("initial player");
 
     return function cleanup() {
       const { DvrInstance } = DVR;
       if (DvrInstance) {
         const instance = DvrInstance();
         if (instance) {
-          console.log("cleanup player");
           instance.props.close();
         }
       }
