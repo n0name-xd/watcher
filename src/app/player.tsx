@@ -24,14 +24,8 @@ const DVRPlayer = ({ options }: IFlussonicOptions) => {
     console.log("initial player");
 
     return function cleanup() {
-      const { DvrInstance } = DVR;
-      if (DvrInstance) {
-        const instance = DvrInstance();
-        if (instance) {
-          console.log("cleanup player");
-          instance.props.close();
-        }
-      }
+      const { DvrUnmount } = DVR;
+      if (DvrUnmount) DvrUnmount();
     };
   }, [options]);
 

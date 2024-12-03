@@ -313,9 +313,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@flussonic/flussonic-dvr-player@npm:24.7.4-105-gd5acdc9":
-  version: 24.7.4-105-gd5acdc9
-  resolution: "@flussonic/flussonic-dvr-player@npm:24.7.4-105-gd5acdc9"
+"@flussonic/flussonic-dvr-player@npm:24.12.1-7-g5e81bf9":
+  version: 24.12.1-7-g5e81bf9
+  resolution: "@flussonic/flussonic-dvr-player@npm:24.12.1-7-g5e81bf9"
   dependencies:
     "@babel/runtime": ^7.10.2
     "@flussonic/flussonic-mse-player": 24.6.1-2-gd4ac37d
@@ -355,7 +355,7 @@ __metadata:
     react-dom: ~18
     url-polyfill: ^1.1.2
     whatwg-fetch: ^3.0.0
-  checksum: becb2226c8b1dbbf261853f301a57b962ba62974498efe78a8133660e34e3d2b0ecac27d57e6e20a9ad6b656eaf50dc5e5b77db5109e4b7bd46b60e6fa98fb4d
+  checksum: d7630c1b5f034d445c28277a16dd69666df7eec0c13becaacd34e72c2813f36bc6b4c86357515312ebc24c8f8a8f38e64537a4fcddfaefc2ae9e77794451e76c
   languageName: node
   linkType: hard
 
@@ -5317,7 +5317,7 @@ __metadata:
     "@emotion/cache": ^11.13.5
     "@emotion/react": ^11.13.5
     "@emotion/styled": ^11.13.5
-    "@flussonic/flussonic-dvr-player": 24.7.4-105-gd5acdc9
+    "@flussonic/flussonic-dvr-player": 24.12.1-7-g5e81bf9
     "@mui/material": ^6.1.9
     "@mui/material-nextjs": ^6.1.9
     "@types/node": ^20
