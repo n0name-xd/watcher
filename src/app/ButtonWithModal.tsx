@@ -1,7 +1,7 @@
 "use client";
-import React, { useState } from 'react';
-import { Drawer } from '@mui/material';
-import DVRPlayer from './player';
+import React, { useState } from "react";
+import { Drawer } from "@mui/material";
+import DVRPlayer from "./player";
 
 export const ButtonWithModal = ({
   name,
@@ -34,10 +34,11 @@ export const ButtonWithModal = ({
             options={
               {
                 dvr: true,
-                locale: 'ru',
+                locale: "ru",
                 name,
-                streamer_http: 'https://watcher.mayak-system.ru',
+                streamer_http: "https://watcher.mayak-system.ru",
                 query: `token=${token}`,
+                muted: "true",
               } as any
             }
           />

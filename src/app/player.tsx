@@ -13,6 +13,7 @@ interface IFlussonicOptions {
     dvr?: boolean;
     tokenName?: string;
     zoom?: number;
+    muted?: string | boolean;
   };
 }
 
@@ -21,14 +22,12 @@ const DVRPlayer = ({ options }: IFlussonicOptions) => {
 
   useEffect(() => {
     const DVR = DvrPlayer.load(options, playerWrapper.current);
-    console.log("initial player");
 
     return function cleanup() {
       const { DvrInstance } = DVR;
       if (DvrInstance) {
         const instance = DvrInstance();
         if (instance) {
-          console.log("cleanup player");
           instance.props.close();
         }
       }
@@ -36,7 +35,11 @@ const DVRPlayer = ({ options }: IFlussonicOptions) => {
   }, [options]);
 
   return (
-    <div id="dvr-player" ref={playerWrapper} style={{ width: 800, height: 600, margin: 16 }} />
+    <div
+      id="dvr-player"
+      ref={playerWrapper}
+      style={{ width: 800, height: 600, margin: 16 }}
+    />
   );
 };
 
